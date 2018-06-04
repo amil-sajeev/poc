@@ -1,7 +1,7 @@
 package main
 
 import (
-  "bytes"
+    "bytes"
 	"encoding/json"
 	"fmt"
 	"strconv"
@@ -66,7 +66,7 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 
 func (s *SmartContract) getAllPatient(APIstub shim.ChaincodeStubInterface) sc.Response {
 
-	startKey := "P1"
+	startKey := "P0"
 	endKey := "P99"
 
 	resultsIterator, err := APIstub.GetStateByRange(startKey, endKey)
@@ -122,9 +122,10 @@ func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Respo
 	patients := []Patient{
 		Patient{FirstName: "Rincy", LastName: "Yohannan"},
 		Patient{FirstName: "Amil", LastName: "Sajeev"},
+		Patient{FirstName: "Athul", LastName: "Suresh"},
 	}
 
-	i := 1
+	i := 0
 	for i < len(patients) {
 		fmt.Println("i is ", i)
 		patientAsBytes, _ := json.Marshal(patients[i])
