@@ -120,8 +120,8 @@ func (s *SmartContract) getPatient(APIstub shim.ChaincodeStubInterface, args []s
 
 func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Response {
 	patients := []Patient{
-		Patient{Id: "P1", FirstName: "Rincy", LastName: "Yohannan"},
-		Patient{Id: "P2", FirstName: "Amil", LastName: "Sajeev"},
+		Patient{FirstName: "Rincy", LastName: "Yohannan"},
+		Patient{FirstName: "Amil", LastName: "Sajeev"},
 	}
 
 	i := 1
